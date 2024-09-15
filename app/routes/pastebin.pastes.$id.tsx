@@ -50,7 +50,7 @@ export default function Index() {
                 <button onClick={handleCopyContent}>Copy content</button>
             </div>
             <input name="comment" className="w-full p-2" readOnly value={paste.comment||""}></input>
-            <textarea ref={textarea} name="content" className="w-full grow p-2 resize-none" value={paste.content}></textarea>
+            <textarea ref={textarea} name="content" className="w-full grow p-2 resize-none" onChange={() => {}} value={paste.content}></textarea>
             <p>Made by Stepan using React, Remix.js, Typescript and Vite</p>
         </ContentPanel>
     )
