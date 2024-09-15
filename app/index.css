@@ -1,5 +1,5 @@
 button,.button {
-    @apply bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 min-w-24;
+    @apply bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 min-w-32;
 }
 
 .button-secondary {
@@ -7,5 +7,33 @@ button,.button {
 }
 
 textarea {
+    @apply font-mono border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent shadow-sm;
+}
+
+input {
     @apply border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent shadow-sm;
+}
+
+.notificationtoast {
+    background-color: black;
+    color: #e8e8e8;
+    position: absolute;
+    bottom: -100px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 360px;
+    height: 48px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 300ms ease-in-out;
+    font-weight: 700;
+    box-sizing: content-box;
+    z-index: 110;
 }

@@ -1,5 +1,6 @@
 import { Outlet, useLocation, useNavigate } from "@remix-run/react"
 import { ReactNode } from "react"
+import { NotificationToast } from "./NotificationToast"
 
 
 export type MenuItemType = { label: string, pathname: string, }
@@ -32,7 +33,7 @@ export function SidebarMenu({ title, items }: { title: string, items: MenuItemTy
 
 export function Titlebar({ children }: { children: ReactNode }) {
     return (
-        <div className="flex w-2/3 items-center rounded-md bg-gray-600 text-gray-100 justify-center text-sm px-3 py-1">
+        <div className="select-none flex w-2/3 items-center rounded-md bg-gray-600 text-gray-100 justify-center text-sm px-3 py-1">
             {children}
         </div>
     )
@@ -47,14 +48,15 @@ export function Main() {
     ]
     return (
         <div className="bg-black shrink grow h-1 flex flex-col gap-4 items-center">
-            <div className="grow overflow-hidden rounded bg-gray-700 shadow-md flex flex-col w-full lg:w-[length:1024px]">
+            <div className="grow overflow-hidden rounded bg-gray-700 shadow-md flex flex-col w-full ">
                 <div className="flex items-center justify-center px-2 pt-2">
-                    <Titlebar>Pastebin (Just mine)</Titlebar>
+                    <Titlebar>Remixpastebin</Titlebar>
                 </div>
                 <div className="flex grow overflow-hidden bg-white text-gray-600 rounded-lg mx-4 mb-4 mt-2">
                     <SidebarMenu title="😎 Pastebin" items={menuItems} />
                     <Outlet></Outlet>
                 </div>
+                <NotificationToast></NotificationToast>
             </div>
         </div>
     )
