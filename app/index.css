@@ -1,5 +1,13 @@
+body {
+    overflow: hidden;
+}
+
 button,.button {
-    @apply bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 min-w-32;
+    @apply bg-blue-500 text-white px-4 py-1 rounded hover:bg-blue-600 min-w-32;
+}
+
+.redbutton {
+    @apply bg-red-500 hover:bg-red-600;
 }
 
 .button-secondary {

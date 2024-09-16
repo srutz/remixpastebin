@@ -1,8 +1,9 @@
 import { randomBytes } from 'crypto';
 import Database from 'better-sqlite3'
 
-//const dbPath = path.resolve(__dirname, '..', 'pastebin.db')
-const db = new Database("./app/data/pastes.db")
+console.log("init with env", process.env)
+const dbfile = process.env.DBFILE || "./app/data/pastes.db"
+const db = new Database(dbfile)
 
 export default db
 
@@ -18,4 +19,4 @@ export function generateRandomId(length: number): string {
         result += alphanumericChars[randomIndex]
     }
     return result
-}
+}   
