@@ -32,7 +32,7 @@ async function copyText(text: string, message: string) {
         return
     }
     await navigator.clipboard.writeText(text)
-    notify({ message: "Contents copied to clipboard" })
+    notify({ message: message })
 }
 
 export type PasteType = {
