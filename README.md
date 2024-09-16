@@ -3,6 +3,12 @@
 Small Pastebin app built with Remix and React.
 Written by Stepan Rutz.
 
+This project includes: Server, Client and Databasecode. You must install Sqlite3 however.
+
+## Preview
+
+![preview](https://raw.githubusercontent.com/srutz/remixpastebin/main/public/pastebin.gif)
+
 
 ## Development
 
