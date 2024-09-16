@@ -61,6 +61,7 @@ export default function Index() {
                 method: "delete",
                 action: `/pastebin/pastes/${encodeURIComponent(externalid)}`,
             })
+            notify({ message: "Your paste was deleted" })
         }
     }
     useEffect(() => {
