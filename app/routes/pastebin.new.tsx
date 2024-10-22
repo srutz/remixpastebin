@@ -2,6 +2,7 @@ import { ActionFunctionArgs } from "@remix-run/node";
 import { Form, redirect } from "@remix-run/react";
 import { ContentPanel } from "~/shared/components/ContentPanel";
 import db, { generateRandomId } from "~/db.server";
+import { useEffect, useState } from "react";
 
 export const action = async ({ request }: ActionFunctionArgs) => {
     //console.log("action", request)
@@ -14,7 +15,15 @@ export const action = async ({ request }: ActionFunctionArgs) => {
     return redirect(`/pastebin/pastes/${encodeURIComponent(external_id)}`)
 }
 
+
+
 export default function Index() {
+    const [client, setClient] = useState(false)
+    useEffect(() => setClient(true))
+    if (!client) {
+        return null
+    }
+    console.log("render new paste")
     return (
         <ContentPanel title="New Paste">
             <Form key={-1} id="new-paste" method="post" className="h-1 grow flex flex-col gap-4">
